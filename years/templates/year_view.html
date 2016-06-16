@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'years.views.new_year'%}">Agregar </a>
+    <ul>
+    {% for y in year %}
+        <li><a href="{% url 'years.views.year_detail' pk=y.pk %}">{{ y.description }}</a> | {{ y.date  }} </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

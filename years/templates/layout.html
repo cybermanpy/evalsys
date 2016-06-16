@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	{% load staticfiles %}
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=divice-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
-	<title> {% block title %} {% endblock %} </title>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<title> {% block title %}  {% endblock %} </title>
 </head>
 <body>
 	<header class="header relative border-bottom">
 		<div class="logo">
 			<div class="wrap center-block">
 				<figure class="image isotipo left">
-					<img src=" {{ STATIC_URL }}img/logo.png " alt="Torneo">
+					<img src="{% static 'img/logoWhite.png' %}" alt="Torneo">
 				</figure>
 			</div>
 			<div class="name center-text">
