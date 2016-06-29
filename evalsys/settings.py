@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'years.apps.YearsConfig',
+    'departments.apps.DepartmentsConfig',
+    'universities.apps.UniversitiesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -90,7 +92,7 @@ DATABASES = {
         'NAME': 'evalsys',
         'USER': 'postgres',
         'PASSWORD': '123456',
-        'HOST': '192.168.1.121',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
