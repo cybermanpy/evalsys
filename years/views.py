@@ -3,9 +3,10 @@ from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from .models import Year
 from .forms import YearForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-
+@login_required(login_url='/')
 def view_years(request):
     title = 'Sistema de Evaluacion Institucional'
     year = Year.objects.all()
@@ -16,6 +17,7 @@ def view_years(request):
     }
     return HttpResponse(template.render(context, request))
 
+@login_required(login_url='/')
 def year_detail(request, pk):
     title = 'Sistema de Evaluacion Institucional'
     year = get_object_or_404(Year, pk=pk)
@@ -26,7 +28,7 @@ def year_detail(request, pk):
     }
     return HttpResponse(template.render(context, request))
 
-
+@login_required(login_url='/')
 def new_year(request):
     if request.method == 'POST':
         form = YearForm(request.POST)

@@ -2,7 +2,7 @@ from django.conf.urls import url
 from . import views
 from django.contrib.auth import views as auth_views
 urlpatterns = [
-    url(r'^login/$', views.authentication, name='authentication'),
-    url(r'^home/$', views.hello, name="hello"),
-    url(r'^logout$', auth_views.logout, {'next_page': '/login'}, name='logout')
+    url(r'^$', views.authentication, name='authentication'),
+    url(r'^dashboard/$', views.home, name="home"),
+    url(r'^logout$', auth_views.logout, {'next_page': '/'}, name='logout')
 ]

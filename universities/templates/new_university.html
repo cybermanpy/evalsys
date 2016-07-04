@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+   	<form method="POST">
+   <!--<form method="POST" enctype="multipart/form-data">-->
+   		{% csrf_token %}
+   		<div class="form-group row">
+   			<label for="name" class="col-sm-2">Nombre de la Universidad</label>
+            <div class="col-sm-10">
+                {% render_field form.name class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="direction" class="col-sm-2">Dirección</label>
+            <div class="col-sm-10">
+                {% render_field form.direction class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="department" class="col-sm-2">Departamento</label>
+            <div class="col-sm-10">
+                {% render_field form.fkdepartment class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="postal_code" class="col-sm-2">Código Postal</label>
+            <div class="col-sm-10">
+                {% render_field form.postal_code class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="phone" class="col-sm-2">Teléfono</label>
+            <div class="col-sm-10">
+                {% render_field form.phone class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="fax" class="col-sm-2">Fax</label>
+            <div class="col-sm-10">
+                {% render_field form.fax class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="email" class="col-sm-2">Email</label>
+            <div class="col-sm-10">
+                {% render_field form.email class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="fkpresident" class="col-sm-2">Decano</label>
+            <div class="col-sm-10">
+                {% render_field form.fkpresident class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="observation" class="col-sm-2">Observaciones</label>
+            <div class="col-sm-10">
+                {% render_field form.observation class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="history" class="col-sm-2">Historia</label>
+            <div class="col-sm-10">
+                {% render_field form.history class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="legal_constitution" class="col-sm-2">Constitución Legal</label>
+            <div class="col-sm-10">
+                {% render_field form.legal_constitution class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="fkstatus" class="col-sm-2">Estado</label>
+            <div class="col-sm-10">
+                {% render_field form.fkstatus class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+   			<label for="fkuser" class="col-sm-2">Usuario</label>
+            <div class="col-sm-10">
+                {% render_field form.fkuser class="form-control" %}
+            </div>
+        </div>
+       <button type="submit" class="btn btn-primary">Guardar</button>
+   </form>
+{% endblock %}

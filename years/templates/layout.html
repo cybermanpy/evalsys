@@ -4,6 +4,7 @@
 	{% load staticfiles %}
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=divice-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 	<title> {% block title %}  {% endblock %} </title>
 </head>
@@ -22,11 +23,15 @@
 		<a href="" class="button-menu icon-menu"></a>
 		<nav class="menu">
 			<ul class="list center-block wrap">
-				<li class="item"><a href="">Home</a></li>
-				<li class="item"><a href="">Formularios</a></li>
+				<li class="item"><a href="/">Inicio</a></li>
+				<li class="item"><a href="/dashboard/university/new">Formularios</a></li>
 				<li class="item"><a href="">Informes</a></li>
-				<li class="item"><a href="">Login</a></li>
 				<li class="item"><a href="">Contáctanos</a></li>
+				{% if user.is_authenticated %}
+					<li class="item"><a href=" {% url "userprofiles:logout" %} ">Logout {{ user.username }}</a></li>
+    			{% else %}
+    				<li class="item"><a href=" {% url "userprofiles:authentication" %} ">Login</a>
+    			{% endif %}
 			</ul>
 		</nav>
 		<div class="title">
@@ -39,5 +44,6 @@
 	<section class="container">
 		{% block container %} {% endblock %}
 	</section>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 </html>

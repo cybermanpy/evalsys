@@ -20,6 +20,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^', include('universities.urls')),
     url(r'^', include('years.urls')),
     url(r'^', include('userprofiles.urls', namespace='userprofiles'),)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

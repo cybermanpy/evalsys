@@ -3,5 +3,5 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 
 
-class StatusConfig(AppConfig):
-    name = 'status'
+class StatusesConfig(AppConfig):
+    name = 'statuses'
