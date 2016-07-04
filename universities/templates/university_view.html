@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'universities.views.new_university' %}" class="btn btn-primary">Agregar </a>
+    <ul class="list-group">
+    {% for u in university %}
+        <li class="list-group-item list-group-item-success">{{ u.name  }}</li>
+        <li class="list-group-item">Dirección: {{ u.direction }}</li>
+        <li class="list-group-item">Departamento: {{ u.fkdepartment }}</li>
+        <li class="list-group-item">Código Postal: {{ u.postal_code }}</li>
+        <li class="list-group-item">Teléfono: {{ u.phone }}</li>
+        <li class="list-group-item">Fax: {{ u.fax }}</li>
+        <li class="list-group-item">Correo: {{ u.email }}</li>
+        <li class="list-group-item">Decano: {{ u.fkpresident }}</li>
+        <li class="list-group-item">Observación: {{ u.observation }}</li>
+        <li class="list-group-item">Historia: {{ u.history }}</li>
+        <li class="list-group-item">Constitución legal: {{ u.legal_constitution }}</li>
+        <li class="list-group-item">Estado: {{ u.fkstatus }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

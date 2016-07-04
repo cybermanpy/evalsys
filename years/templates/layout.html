@@ -13,7 +13,7 @@
 		<div class="logo">
 			<div class="wrap center-block">
 				<figure class="image isotipo left">
-					<img src="{% static 'img/logoWhite.png' %}" alt="Torneo">
+					<img src="{% static 'img/logoBlack.png' %}" alt="Torneo">
 				</figure>
 			</div>
 			<div class="name center-text">
@@ -24,8 +24,8 @@
 		<nav class="menu">
 			<ul class="list center-block wrap">
 				<li class="item"><a href="/">Inicio</a></li>
-				<li class="item"><a href="/dashboard/university/new">Formularios</a></li>
-				<li class="item"><a href="">Informes</a></li>
+				<li class="item"><a href="">Formularios</a></li>
+				<li class="item"><a href="/dashboard/universities">Universidades</a></li>
 				<li class="item"><a href="">Contáctanos</a></li>
 				{% if user.is_authenticated %}
 					<li class="item"><a href=" {% url "userprofiles:logout" %} ">Logout {{ user.username }}</a></li>
