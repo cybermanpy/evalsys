@@ -11,4 +11,6 @@ class Status(models.Model):
         return self.description
 
     class Meta:
+    	verbose_name = 'Status'
+    	verbose_name_plural = 'Statuses'
         ordering = ('id',)

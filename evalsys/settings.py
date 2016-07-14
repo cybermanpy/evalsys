@@ -33,8 +33,9 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'departments.apps.DepartmentsConfig',
     'presidents.apps.PresidentsConfig',
-    'universities.apps.UniversitiesConfig',
+    'profiles.apps.ProfilesConfig',
     'statuses.apps.StatusesConfig',
+    'universities.apps.UniversitiesConfig',
     'years.apps.YearsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

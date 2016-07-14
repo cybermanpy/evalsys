@@ -23,6 +23,9 @@ class University(models.Model):
     legal_constitution = models.TextField(blank=False)
     fkstatus = models.ForeignKey(Status)
 
+    class Meta:
+        verbose_name = 'University'
+        verbose_name_plural = 'Universities'
 
 # class HaveDepartment(models.Model):
 #     dep = models.ForeignKey(Department)
